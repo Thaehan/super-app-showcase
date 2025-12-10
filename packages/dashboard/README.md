@@ -10,22 +10,12 @@ Install dependencies for all apps in root directory of this monorepo:
 pnpm install
 ```
 
-Install pods:
-
-```
-pnpm pods
-```
-
-Pods might sometimes be outdated, and they might fail to install, in that case you can update them by running:
-
-```
-pnpm pods:update
-```
-
 ### Run
 
-Start dev server for all apps in root directory of this monorepo if you need to work as a part of host app. Dashboard app server will run on 9002 port:
+Dashboard no longer ships native projects or standalone runners. Run its dev server as a remote for the Host app:
 
 ```
 pnpm start
 ```
+
+This will start the Metro server on port `9002` consumed by the Host via Module Federation. Keep the Auth dev server running (port `9003`) so Dashboard can use Auth screens.

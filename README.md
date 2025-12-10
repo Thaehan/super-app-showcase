@@ -52,7 +52,7 @@ The super app contains 4 apps:
   Dashboard exposes `MainNavigator`. `MainNavigator` is Dashboard app itself.
 - `auth` - module that is used by other modules to provide authentication and authorization flow and UI.
 
-Each of the mini apps could be deployed and run as a standalone app.
+Mini apps in this repo are intended to be loaded by the Host via Module Federation. Standalone native runners are not provided here (the separate News repo still ships its own native projects).
 
 ## How to use
 
@@ -101,19 +101,9 @@ Run Super App on iOS or Android (ios | android):
 pnpm run:host:<platform>
 ```
 
-### Running the Mini App as a standalone app
+### Running mini apps
 
-> **💡 NOTE**
->
-> The "booking" and "shopping" mini-apps can't be run in standalone mode (i.e. without the host running). This is a deliberate decision of this repository to showcase the possibility and to reduce the amount of work to keep the mini-apps dependencies up-to-date.
->
-> It's up to you to decide on what kind of developer experience your super app has.
-
-Start DevServer for a Dashboard Mini App as a standalone app:
-
-```
-pnpm start:dashboard
-```
+Mini apps (booking, shopping, dashboard, auth) run as remotes served by their dev servers and consumed by the Host. To work with them, run `pnpm start` (starts all servers via mprocs) and launch the Host app. The News mini-app lives in a separate repo if you want to run it independently.
 
 ### Code Quality Scripts
 
