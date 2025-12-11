@@ -40,6 +40,13 @@ export default Repack.defineRspackConfig(({mode, platform}) => {
         ...Repack.getAssetTransformRules({inline: true}),
       ],
     },
+    ignoreWarnings: [
+      {
+        module: /node_modules[\\/].*react-native-(reanimated|worklets)[\\/]/,
+        message:
+          /require function is used in a way in which dependencies cannot be statically extracted/,
+      },
+    ],
     plugins: [
       new Repack.RepackPlugin(),
       new Repack.plugins.ModuleFederationPluginV2({

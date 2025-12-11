@@ -24,9 +24,7 @@
     "mprocs": "^0.7.1"
   },
   "pnpm": {
-    "patchedDependencies": {
-      "react-native-paper": "patches/react-native-paper.patch"
-    },
+    "patchedDependencies": {},
     "packageExtensions": {
       "@module-federation/data-prefetch": {
         "peerDependenciesMeta": {

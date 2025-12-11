@@ -30,6 +30,9 @@ PODS:
     - SocketRocket
     - SwiftyRSA (~> 1.7)
     - Yoga
+  - DGCharts (5.1.0):
+    - DGCharts/Core (= 5.1.0)
+  - DGCharts/Core (5.1.0)
   - DoubleConversion (1.1.6)
   - fast_float (8.0.0)
   - FBLazyVector (0.82.1)
@@ -39,6 +42,96 @@ PODS:
     - hermes-engine/Pre-built (= 0.82.1)
   - hermes-engine/Pre-built (0.82.1)
   - JWTDecode (3.0.1)
+  - ModernCharts (0.0.1):
+    - boost
+    - DGCharts
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - NitroModules
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-callinvoker
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - SocketRocket
+    - Yoga
+  - NitroModules (0.31.10):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-callinvoker
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - SocketRocket
+    - Yoga
+  - PdfEditor (0.0.1):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - NitroModules
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-callinvoker
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - SocketRocket
+    - Yoga
   - RCT-Folly (2024.11.18.00):
     - boost
     - DoubleConversion
@@ -2815,6 +2908,9 @@ DEPENDENCIES:
   - fmt (from `../node_modules/react-native/third-party-podspecs/fmt.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
+  - ModernCharts (from `../node_modules/react-native-modern-charts`)
+  - NitroModules (from `../node_modules/react-native-nitro-modules`)
+  - PdfEditor (from `../node_modules/react-native-pdf-editor`)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCTDeprecation (from `../node_modules/react-native/ReactApple/Libraries/RCTFoundation/RCTDeprecation`)
   - RCTRequired (from `../node_modules/react-native/Libraries/Required`)
@@ -2896,6 +2992,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - DGCharts
     - JWTDecode
     - SDWebImage
     - SDWebImageSVGCoder
@@ -2921,6 +3018,12 @@ EXTERNAL SOURCES:
   hermes-engine:
     :podspec: "../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec"
     :tag: hermes-2025-09-01-RNv0.82.0-265ef62ff3eb7289d17e366664ac0da82303e101
+  ModernCharts:
+    :path: "../node_modules/react-native-modern-charts"
+  NitroModules:
+    :path: "../node_modules/react-native-nitro-modules"
+  PdfEditor:
+    :path: "../node_modules/react-native-pdf-editor"
   RCT-Folly:
     :podspec: "../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec"
   RCTDeprecation:
@@ -3073,6 +3176,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost: 7e761d76ca2ce687f7cc98e698152abd03a18f90
   callstack-repack: 9c91d2c48b139e38919c656474f43ab0494b4c21
+  DGCharts: 1c6daf585b6cfc78807af44ea690d357c410627f
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb
   fast_float: b32c788ed9c6a8c584d114d0047beda9664e7cc6
   FBLazyVector: 0aa6183b9afe3c31fc65b5d1eeef1f3c19b63bfa
@@ -3080,6 +3184,9 @@ SPEC CHECKSUMS:
   glog: 5683914934d5b6e4240e497e0f4a3b42d1854183
   hermes-engine: 273e30e7fb618279934b0b95ffab60ecedb7acf5
   JWTDecode: 2eed97c2fa46ccaf3049a787004eedf0be474a87
+  ModernCharts: 4733681342f69cdfd498b905e12f9d285e3d31af
+  NitroModules: 22837572f1ecf8f1560f5aac7c9f687825754901
+  PdfEditor: 39d39783377572a8823150415b7c38f78ce8f9f9
   RCT-Folly: 59ec0ac1f2f39672a0c6e6cecdd39383b764646f
   RCTDeprecation: f17e2ebc07876ca9ab8eb6e4b0a4e4647497ae3a
   RCTRequired: e2c574c1b45231f7efb0834936bd609d75072b63

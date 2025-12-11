@@ -169,6 +169,10 @@ const styles = StyleSheet.create({
   cardWidth: {
     width: 270,
   },
+  chartCard: {
+    marginHorizontal: 16,
+    marginBottom: 8,
+  },
 });
 
 export default HomeScreen;
