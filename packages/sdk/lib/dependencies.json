@@ -1,11 +1,11 @@
 {
   "react": {
     "name": "react",
-    "version": "19.0.0"
+    "version": "19.1.1"
   },
   "react-native": {
     "name": "react-native",
-    "version": "0.78.2"
+    "version": "0.82.1"
   },
   "@bottom-tabs/react-navigation": {
     "name": "@bottom-tabs/react-navigation",
