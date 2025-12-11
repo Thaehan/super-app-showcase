@@ -24,6 +24,7 @@ export default Repack.defineRspackConfig(({mode, platform}) => {
     },
     output: {
       uniqueName: 'sas-shopping',
+      publicPath: Repack.getPublicPath({platform}),
     },
     module: {
       rules: [

@@ -26,6 +26,7 @@ export default Repack.defineRspackConfig(({mode, platform}) => {
     },
     output: {
       uniqueName: 'sas-dashboard',
+      publicPath: Repack.getPublicPath({platform}),
     },
     module: {
       rules: [

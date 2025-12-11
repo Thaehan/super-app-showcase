@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
  * Learn about Re.Pack configuration: https://re-pack.dev/docs/guides/configuration
  */
 
-export default Repack.defineRspackConfig(({mode}) => {
+export default Repack.defineRspackConfig(({mode, platform}) => {
   return {
     mode,
     context: __dirname,
@@ -24,6 +24,7 @@ export default Repack.defineRspackConfig(({mode}) => {
     },
     output: {
       uniqueName: 'sas-auth',
+      publicPath: Repack.getPublicPath({platform}),
     },
     module: {
       rules: [

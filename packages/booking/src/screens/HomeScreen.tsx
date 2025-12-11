@@ -16,6 +16,7 @@ import {HomeStackParamList} from '../navigation/HomeNavigator';
 import upcomingBookings from '../data/upcomingBookings.json';
 import recentBookings from '../data/recentBookings.json';
 import featuredServices from '../data/featuredServices.json';
+import AnimatedFloatButton from './AnimatedFloatButton';
 
 type Props = CompositeScreenProps<
   NativeStackScreenProps<HomeStackParamList>,
@@ -115,6 +116,7 @@ const HomeScreen = ({navigation}: Props) => {
         ItemSeparatorComponent={renderDivider}
         contentContainerStyle={styles.contentContainer}
       />
+      <AnimatedFloatButton />
     </ScrollView>
   );
 };
