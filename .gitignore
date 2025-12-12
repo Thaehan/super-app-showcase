@@ -30,3 +30,7 @@ local.properties
 *.iml
 *.hprof
 .cxx/
+.build
+dist
+maven
+native-sdk

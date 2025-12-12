@@ -1,0 +1,18 @@
+{
+  "cxxNamespace": ["finxcorern"],
+  "ios": {
+    "iosModuleName": "FinXCoreRN"
+  },
+  "android": {
+    "androidNamespace": ["finxcorern"],
+    "androidCxxLibName": "finxcorern"
+  },
+  "specs": ["./src/FinXCoreRN.nitro.ts"],
+  "autolinking": {
+    "FinXCoreRN": {
+      "swift": "FinXCoreRN",
+      "kotlin": "FinXCoreRN"
+    }
+  },
+  "ignorePaths": ["node_modules"]
+}

@@ -20,6 +20,7 @@ import bookings from '../data/bookings.json';
 import products from '../data/products.json';
 import news from '../data/news.json';
 import articles from '../data/articles.json';
+import FinXCoreTest from '../components/FinXCoreTest';
 
 const showNotImplementedAlert = () => Alert.alert('Not implemented yet');
 
@@ -78,6 +79,11 @@ const HomeScreen = () => {
     <ScrollView
       style={styles.container}
       contentInsetAdjustmentBehavior="automatic">
+      <Card mode="contained" style={styles.chartCard}>
+        <Card.Content>
+          <FinXCoreTest />
+        </Card.Content>
+      </Card>
       <View style={styles.header}>
         <Text variant="titleLarge" style={styles.headerTitle}>
           My Appointments
