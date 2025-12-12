@@ -195,7 +195,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\nexport BUNDLE_COMMAND=bundle\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\nexport BUNDLE_COMMAND=bundle\n\nif [ \"$CONFIGURATION\" = \"Release\" ]; then\n  echo \"[Re.Pack] Bundling with Rspack (Release)\"\n  ROOT_DIR=\"$(cd \\\"$PROJECT_DIR/..\\\" && pwd)\"\n  cd \"$ROOT_DIR\"\n\n  # Build JS bundle with Rspack/Re.Pack\n  pnpm --filter host run bundle:ios:rspack\n\n  BUNDLE_OUTPUT=\"$ROOT_DIR/dist/ios/main.jsbundle\"\n  ASSETS_OUTPUT=\"$ROOT_DIR/dist/ios/assets\"\n  DEST_DIR=\"$CONFIGURATION_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\n\n  mkdir -p \"$DEST_DIR\"\n  cp \"$BUNDLE_OUTPUT\" \"$DEST_DIR/main.jsbundle\"\n\n  if [ -d \"$ASSETS_OUTPUT\" ]; then\n    rsync -avr --delete \"$ASSETS_OUTPUT\"/ \"$DEST_DIR/assets/\"\n  fi\n\n  exit 0\nfi\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
 		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
