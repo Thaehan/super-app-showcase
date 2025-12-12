@@ -1,13 +1,12 @@
 import {ScriptManager} from '@callstack/repack/client';
 import {AppRegistry} from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import App from './src/App';
 import {name as appName} from './app.json';
 
-// Only set storage caching in production
-// @todo: fix this to be reliable in both dev and prod
+// Chỉ set storage trong production và load động.
 if (!__DEV__) {
-  ScriptManager.shared.setStorage(AsyncStorage);
+  const {FinXStorage} = require('./src/storage/FinXStorage');
+  ScriptManager.shared.setStorage(FinXStorage);
 }
 
 AppRegistry.registerComponent(appName, () => App);

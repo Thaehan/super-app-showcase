@@ -90,7 +90,7 @@ const AuthProvider = ({
 
       try {
         userToken = await AuthService.shared.getCredentials();
-      } catch (e) {
+      } catch {
         // Handle error
       }
 

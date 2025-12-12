@@ -11,10 +11,6 @@
     "name": "@bottom-tabs/react-navigation",
     "version": "0.9.0"
   },
-  "@react-native-async-storage/async-storage": {
-    "name": "@react-native-async-storage/async-storage",
-    "version": "2.0.0"
-  },
   "@react-navigation/native": {
     "name": "@react-navigation/native",
     "version": "7.0.14"
@@ -60,6 +56,11 @@
   "@module-federation/enhanced": {
     "name": "@module-federation/enhanced",
     "version": "0.13.1",
+    "shared": false
+  },
+  "@tanstack/react-query": {
+    "name": "@tanstack/react-query",
+    "version": "^5.61.0",
     "shared": false
   },
   "react-native-edge-to-edge": {
