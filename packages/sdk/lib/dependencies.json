@@ -38,8 +38,7 @@
   },
   "react-native-nitro-modules": {
     "name": "react-native-nitro-modules",
-    "version": "^0.31.6",
-    "shared": false
+    "version": "^0.31.6"
   },
   "react-native-safe-area-context": {
     "name": "react-native-safe-area-context",

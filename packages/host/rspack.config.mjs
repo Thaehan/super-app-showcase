@@ -2,6 +2,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import * as Repack from '@callstack/repack';
 import rspack from '@rspack/core';
+import {ReanimatedPlugin} from '@callstack/repack-plugin-reanimated';
 import {getSharedDependencies} from 'super-app-showcase-sdk';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -53,6 +54,7 @@ export default Repack.defineRspackConfig(({mode, platform}) => {
         },
         shared: getSharedDependencies({eager: true}),
       }),
+      new ReanimatedPlugin({unstable_disableTransform: true}),
       // silence missing @react-native-masked-view optionally required by @react-navigation/elements
       new rspack.IgnorePlugin({
         resourceRegExp: /^@react-native-masked-view/,

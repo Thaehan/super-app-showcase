@@ -155,9 +155,6 @@ importers:
       '@react-navigation/native-stack':
         specifier: 7.2.0
         version: 7.2.0(@react-navigation/native@7.0.14(react-native@0.82.1(@babel/core@7.26.0)(@react-native-community/cli@15.0.1(typescript@5.6.3))(@react-native/metro-config@0.82.1(@babel/core@7.26.0))(@types/react@19.1.1)(react@19.1.1))(react@19.1.1))(react-native-safe-area-context@5.6.2(react-native@0.82.1(@babel/core@7.26.0)(@react-native-community/cli@15.0.1(typescript@5.6.3))(@react-native/metro-config@0.82.1(@babel/core@7.26.0))(@types/react@19.1.1)(react@19.1.1))(react@19.1.1))(react-native-screens@4.18.0(react-native@0.82.1(@babel/core@7.26.0)(@react-native-community/cli@15.0.1(typescript@5.6.3))(@react-native/metro-config@0.82.1(@babel/core@7.26.0))(@types/react@19.1.1)(react@19.1.1))(react@19.1.1))(react-native@0.82.1(@babel/core@7.26.0)(@react-native-community/cli@15.0.1(typescript@5.6.3))(@react-native/metro-config@0.82.1(@babel/core@7.26.0))(@types/react@19.1.1)(react@19.1.1))(react@19.1.1)
-      finx-core-rn:
-        specifier: 0.0.1
-        version: link:../../sdks/ReactNative/FinXCoreRN
       react:
         specifier: 19.1.1
         version: 19.1.1
@@ -459,8 +456,11 @@ importers:
         specifier: ^7.25.0
         version: 7.26.0
       '@callstack/repack':
-        specifier: 5.2.0
-        version: 5.2.0(@babel/core@7.26.0)(@module-federation/enhanced@0.13.1(@rspack/core@1.5.0(@swc/helpers@0.5.17))(react@19.1.1)(typescript@5.6.3))(@rspack/core@1.5.0(@swc/helpers@0.5.17))(react-native@0.82.1(@babel/core@7.26.0)(@react-native-community/cli@15.0.1(typescript@5.6.3))(@react-native/metro-config@0.82.1(@babel/core@7.26.0))(@types/react@19.1.1)(react@19.1.1))
+        specifier: ^5.2.3
+        version: 5.2.3(@babel/core@7.26.0)(@module-federation/enhanced@0.13.1(@rspack/core@1.5.0(@swc/helpers@0.5.17))(react@19.1.1)(typescript@5.6.3))(@rspack/core@1.5.0(@swc/helpers@0.5.17))(react-native@0.82.1(@babel/core@7.26.0)(@react-native-community/cli@15.0.1(typescript@5.6.3))(@react-native/metro-config@0.82.1(@babel/core@7.26.0))(@types/react@19.1.1)(react@19.1.1))
+      '@callstack/repack-plugin-reanimated':
+        specifier: ^5.2.3
+        version: 5.2.3(@babel/core@7.26.0)(@callstack/repack@5.2.3(@babel/core@7.26.0)(@module-federation/enhanced@0.13.1(@rspack/core@1.5.0(@swc/helpers@0.5.17))(react@19.1.1)(typescript@5.6.3))(@rspack/core@1.5.0(@swc/helpers@0.5.17))(react-native@0.82.1(@babel/core@7.26.0)(@react-native-community/cli@15.0.1(typescript@5.6.3))(@react-native/metro-config@0.82.1(@babel/core@7.26.0))(@types/react@19.1.1)(react@19.1.1)))
       '@react-native-community/cli':
         specifier: 15.0.1
         version: 15.0.1(typescript@5.6.3)
@@ -688,10 +688,6 @@ packages:
 
   '@babel/code-frame@7.26.0':
     resolution: {integrity: sha512-INCKxTtbXtcNbUZ3YXutwMpEleqttcswhAdee7dhuoVrD2cnuc3PqtERBtxkX5nziX9vnBL8WXmSGwv8CuPV6g==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/code-frame@7.26.2':
-    resolution: {integrity: sha512-RJlIHRueQgwWitWgF8OdFYGZX328Ax5BCemNGlqHfplnRT9ESi8JkFlvaVYbS+UubVY6dpv87Fs2u5M29iNFVQ==}
     engines: {node: '>=6.9.0'}
 
   '@babel/code-frame@7.27.1':
@@ -1453,8 +1449,35 @@ packages:
     resolution: {integrity: sha512-1LTESWdvTIy+8XtmmhsQd7zoca0gObXRfltquIRawZLol7L5JnbdV4jq36cPpKoXPNnv28lPSFA/+PLRG7kmmQ==}
     engines: {node: '>=18'}
 
+  '@callstack/repack-dev-server@5.2.3':
+    resolution: {integrity: sha512-JijNFuhPeC4mEfO3m1nS1ZNaj33eZQGEvJ85qqeTpiLt0DPktoXgaBeVX3Diu5WzFDR6rzpVOROQozpZGCR5lQ==}
+    engines: {node: '>=18'}
+
+  '@callstack/repack-plugin-reanimated@5.2.3':
+    resolution: {integrity: sha512-panz4sRTnblWPI90KPiGL3DUFgq5k3GoBhZGSgGy7Ht0mMor6Pvg/qp/NYA4cqlhMU6FrcziD0aW5H19tBHD8Q==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@babel/core': ^7.20
+      '@callstack/repack': 5.2.3
+
   '@callstack/repack@5.2.0':
     resolution: {integrity: sha512-OoAky6LejpbOpcVjH/WldAmmaixyZgT3sGC3TjWpPm/HBriIn7rODyUXquBSVQZCoBNVBaqlUbxZpzvWcfgWMQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@module-federation/enhanced': '>=0.6.10'
+      '@rspack/core': '>=1'
+      react-native: '>=0.74'
+      webpack: '>=5.90'
+    peerDependenciesMeta:
+      '@module-federation/enhanced':
+        optional: true
+      '@rspack/core':
+        optional: true
+      webpack:
+        optional: true
+
+  '@callstack/repack@5.2.3':
+    resolution: {integrity: sha512-oLDa6OowUUSHFJSvmKsiflpEBRhStvXU2MnuYI8bSfOjxwbTtGECrljLHaErLobLWDpBuX3/JolRPjPl+gKFUA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@module-federation/enhanced': '>=0.6.10'
@@ -5837,12 +5860,6 @@ snapshots:
       js-tokens: 4.0.0
       picocolors: 1.1.1
 
-  '@babel/code-frame@7.26.2':
-    dependencies:
-      '@babel/helper-validator-identifier': 7.25.9
-      js-tokens: 4.0.0
-      picocolors: 1.1.1
-
   '@babel/code-frame@7.27.1':
     dependencies:
       '@babel/helper-validator-identifier': 7.28.5
@@ -6806,7 +6823,7 @@ snapshots:
 
   '@callstack/repack-dev-server@5.2.0':
     dependencies:
-      '@babel/code-frame': 7.26.2
+      '@babel/code-frame': 7.27.1
       '@fastify/middie': 8.3.1
       '@fastify/sensible': 5.6.0
       fastify: 4.28.1
@@ -6823,9 +6840,74 @@ snapshots:
       - supports-color
       - utf-8-validate
 
+  '@callstack/repack-dev-server@5.2.3':
+    dependencies:
+      '@babel/code-frame': 7.27.1
+      '@fastify/middie': 8.3.1
+      '@fastify/sensible': 5.6.0
+      fastify: 4.28.1
+      fastify-favicon: 4.3.0
+      fastify-plugin: 4.5.1
+      http-proxy-middleware: 3.0.5
+      launch-editor: 2.10.0
+      open: 10.1.0
+      pretty-format: 28.1.3
+      source-map: 0.7.4
+      ws: 8.18.1
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
+  '@callstack/repack-plugin-reanimated@5.2.3(@babel/core@7.26.0)(@callstack/repack@5.2.3(@babel/core@7.26.0)(@module-federation/enhanced@0.13.1(@rspack/core@1.5.0(@swc/helpers@0.5.17))(react@19.1.1)(typescript@5.6.3))(@rspack/core@1.5.0(@swc/helpers@0.5.17))(react-native@0.82.1(@babel/core@7.26.0)(@react-native-community/cli@15.0.1(typescript@5.6.3))(@react-native/metro-config@0.82.1(@babel/core@7.26.0))(@types/react@19.1.1)(react@19.1.1)))':
+    dependencies:
+      '@babel/core': 7.26.0
+      '@callstack/repack': 5.2.3(@babel/core@7.26.0)(@module-federation/enhanced@0.13.1(@rspack/core@1.5.0(@swc/helpers@0.5.17))(react@19.1.1)(typescript@5.6.3))(@rspack/core@1.5.0(@swc/helpers@0.5.17))(react-native@0.82.1(@babel/core@7.26.0)(@react-native-community/cli@15.0.1(typescript@5.6.3))(@react-native/metro-config@0.82.1(@babel/core@7.26.0))(@types/react@19.1.1)(react@19.1.1))
+      semver: 7.7.2
+
   '@callstack/repack@5.2.0(@babel/core@7.26.0)(@module-federation/enhanced@0.13.1(@rspack/core@1.5.0(@swc/helpers@0.5.17))(react@19.1.1)(typescript@5.6.3))(@rspack/core@1.5.0(@swc/helpers@0.5.17))(react-native@0.82.1(@babel/core@7.26.0)(@react-native-community/cli@15.0.1(typescript@5.6.3))(@react-native/metro-config@0.82.1(@babel/core@7.26.0))(@types/react@19.1.1)(react@19.1.1))':
     dependencies:
       '@callstack/repack-dev-server': 5.2.0
+      '@discoveryjs/json-ext': 0.5.7
+      '@rspack/plugin-react-refresh': 1.0.0(react-refresh@0.14.0)
+      babel-loader: 9.2.1(@babel/core@7.26.0)
+      colorette: 2.0.20
+      dedent: 0.7.0
+      estree-util-is-identifier-name: 1.1.0
+      events: 3.3.0
+      execa: 5.1.1
+      exit-hook: 4.0.0
+      flow-remove-types: 2.277.1
+      gradient-string: 2.0.2
+      image-size: 1.1.1
+      jsonwebtoken: 9.0.2
+      memfs: 4.14.0
+      mime-types: 2.1.35
+      pretty-format: 26.6.2
+      react-native: 0.82.1(@babel/core@7.26.0)(@react-native-community/cli@15.0.1(typescript@5.6.3))(@react-native/metro-config@0.82.1(@babel/core@7.26.0))(@types/react@19.1.1)(react@19.1.1)
+      react-refresh: 0.14.0
+      schema-utils: 4.3.2
+      semver: 7.7.2
+      shallowequal: 1.1.0
+      tapable: 2.2.1
+      terser-webpack-plugin: 5.3.14
+      throttleit: 2.1.0
+      webpack-merge: 6.0.1
+    optionalDependencies:
+      '@module-federation/enhanced': 0.13.1(@rspack/core@1.5.0(@swc/helpers@0.5.17))(react@19.1.1)(typescript@5.6.3)
+      '@rspack/core': 1.5.0(@swc/helpers@0.5.17)
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@swc/core'
+      - bufferutil
+      - esbuild
+      - supports-color
+      - uglify-js
+      - utf-8-validate
+
+  '@callstack/repack@5.2.3(@babel/core@7.26.0)(@module-federation/enhanced@0.13.1(@rspack/core@1.5.0(@swc/helpers@0.5.17))(react@19.1.1)(typescript@5.6.3))(@rspack/core@1.5.0(@swc/helpers@0.5.17))(react-native@0.82.1(@babel/core@7.26.0)(@react-native-community/cli@15.0.1(typescript@5.6.3))(@react-native/metro-config@0.82.1(@babel/core@7.26.0))(@types/react@19.1.1)(react@19.1.1))':
+    dependencies:
+      '@callstack/repack-dev-server': 5.2.3
       '@discoveryjs/json-ext': 0.5.7
       '@rspack/plugin-react-refresh': 1.0.0(react-refresh@0.14.0)
       babel-loader: 9.2.1(@babel/core@7.26.0)
@@ -11844,7 +11926,7 @@ snapshots:
 
   terser-webpack-plugin@5.3.14:
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.25
+      '@jridgewell/trace-mapping': 0.3.31
       jest-worker: 27.5.1
       schema-utils: 4.3.2
       serialize-javascript: 6.0.2

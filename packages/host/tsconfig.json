@@ -14,7 +14,13 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "auth/AuthProvider": ["../../packages/auth/src/providers/AuthProvider"],
+      "auth/SignInScreen": ["../../packages/auth/src/screens/SignInScreen"],
+      "auth/*": ["../../packages/auth/src/*"]
+    }
   },
   "exclude": [
     "node_modules",
