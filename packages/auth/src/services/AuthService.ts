@@ -1,41 +1,38 @@
 import {getItem, setItem, removeItem} from 'finx-core-rn';
-// Ưu tiên Keychain (FinXCoreRN); fallback bộ nhớ nếu lỗi/không khả dụng.
+
+// Sử dụng FinXCoreRN cho cả Dev và Prod để đảm bảo persistence (giữ session khi restart).
+// Fallback in-memory chỉ dùng khi FinXCoreRN throw loĩ thực sự.
 const memoryStore: Record<string, string> = {};
-const useKeychain = !__DEV__; // chỉ bật keychain ở prod để tránh xung đột dev.
 
 const getKey = (key: string) => {
-  if (useKeychain) {
-    try {
-      return getItem(key);
-    } catch (e) {
-      console.warn('AuthService getKey keychain failed, fallback memory', e);
-    }
+  try {
+    const val = getItem(key);
+    console.log('[AuthService] getKey val:', val);
+    // Nếu implementation trả về undefined/null thì fallback? 
+    // Giả sử getItem trả về string | null.
+    return val; 
+  } catch (e) {
+    console.warn('AuthService getKey failed', e);
+    return memoryStore[key] ?? null;
   }
-  return memoryStore[key] ?? null;
 };
 
 const setKey = (key: string, value: string) => {
-  if (useKeychain) {
-    try {
-      setItem(key, value);
-      return;
-    } catch (e) {
-      console.warn('AuthService setKey keychain failed, fallback memory', e);
-    }
+  try {
+    setItem(key, value);
+  } catch (e) {
+    console.warn('AuthService setKey failed', e);
+    memoryStore[key] = value;
   }
-  memoryStore[key] = value;
 };
 
 const removeKey = (key: string) => {
-  if (useKeychain) {
-    try {
-      removeItem(key);
-      return;
-    } catch (e) {
-      console.warn('AuthService removeKey keychain failed, fallback memory', e);
-    }
+  try {
+    removeItem(key);
+  } catch (e) {
+    console.warn('AuthService removeKey failed', e);
+    delete memoryStore[key];
   }
-  delete memoryStore[key];
 };
 
 class AuthService {

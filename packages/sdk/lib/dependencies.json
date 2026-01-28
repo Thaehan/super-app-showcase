@@ -73,7 +73,6 @@
   },
   "finx-core-rn": {
     "name": "finx-core-rn",
-    "version": "0.0.1",
-    "shared": false
+    "version": "0.0.1"
   }
 }
