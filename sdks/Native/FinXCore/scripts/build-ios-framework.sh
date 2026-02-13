@@ -13,7 +13,7 @@ REPO_ROOT="$(cd "$MODULE_ROOT/../../.." && pwd)"
 FRAMEWORK_NAME="${FRAMEWORK_NAME:-FinXCore}"
 SCHEME_NAME="${SCHEME_NAME:-FinXCore}"
 
-FINXCORE_XCFRAMEWORK_DIR="$REPO_ROOT/sdk/ReactNative/FinXCoreRN/native-sdk/ios/${FRAMEWORK_NAME}.xcframework"
+FINXCORE_XCFRAMEWORK_DIR="$REPO_ROOT/sdks/ReactNative/FinXCoreRN/native-sdk/ios/${FRAMEWORK_NAME}.xcframework"
 
 rm -rf "$BUILD_ROOT"
 mkdir -p "$DEVICE_DERIVED" "$SIM_DERIVED" "$DIST_DIR"

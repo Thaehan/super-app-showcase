@@ -1,6 +1,6 @@
 PODS:
   - boost (1.84.0)
-  - callstack-repack (5.2.0):
+  - callstack-repack (5.2.3):
     - boost
     - DoubleConversion
     - fast_float
@@ -3106,7 +3106,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: 7e761d76ca2ce687f7cc98e698152abd03a18f90
-  callstack-repack: 9c91d2c48b139e38919c656474f43ab0494b4c21
+  callstack-repack: 15b29626cee2b659cd3f9afa4e8c33b1d42f5c59
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb
   fast_float: b32c788ed9c6a8c584d114d0047beda9664e7cc6
   FBLazyVector: 0aa6183b9afe3c31fc65b5d1eeef1f3c19b63bfa
@@ -3193,8 +3193,8 @@ SPEC CHECKSUMS:
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   SwiftUIIntrospect: fee9aa07293ee280373a591e1824e8ddc869ba5d
   SwiftyRSA: 8c6dd1ea7db1b8dc4fb517a202f88bb1354bc2c6
-  Yoga: 8e01cef9947ca77f0477a098f0b32848a8e448c6
+  Yoga: 689c8e04277f3ad631e60fe2a08e41d411daf8eb
 
 PODFILE CHECKSUM: 34b4852eb8f7b72bc846594aa49111685f3cc131
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2

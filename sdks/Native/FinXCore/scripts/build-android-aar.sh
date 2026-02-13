@@ -8,7 +8,7 @@ REPO_ROOT="$(cd "$MODULE_ROOT/../../.." && pwd)"
 WRAPPER="$REPO_ROOT/apps/finx-shell-app/android/gradlew"
 LOCAL_MAVEN="$ANDROID_DIR/build/maven"
 DIST_MAVEN="$MODULE_ROOT/dist/android/maven"
-FINXCORE_NATIVE_SDK="$REPO_ROOT/sdk/ReactNative/FinXCoreRN/native-sdk/android/maven"
+FINXCORE_NATIVE_SDK="$REPO_ROOT/sdks/ReactNative/FinXCoreRN/native-sdk/android/maven"
 
 if [ ! -x "$WRAPPER" ]; then
   echo "Gradle wrapper not found at $WRAPPER" >&2
