@@ -20,7 +20,7 @@
     "typecheck": "pnpm -r typecheck",
     "align-deps": "pnpm -r align-deps",
     "check-deps": "pnpm -r check-deps",
-    "kill-ports": "lsof -ti:9000-9004 | xargs kill -9 || true"
+    "kill-ports": "lsof -ti:9000-9004 | xargs kill -9 || true && lsof -ti:8081 | xargs kill -9 || true"
   },
   "dependencies": {
     "mprocs": "^0.7.1"

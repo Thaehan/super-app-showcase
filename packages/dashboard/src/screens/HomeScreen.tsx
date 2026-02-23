@@ -20,7 +20,7 @@ import bookings from '../data/bookings.json';
 import products from '../data/products.json';
 import news from '../data/news.json';
 import articles from '../data/articles.json';
-import SMobileCoreTest from '../components/SMobileCoreTest';
+import {MMKVTest} from '../components/MMKVTest';
 
 const showNotImplementedAlert = () => Alert.alert('Not implemented yet');
 
@@ -81,7 +81,7 @@ const HomeScreen = () => {
       contentInsetAdjustmentBehavior="automatic">
       <Card mode="contained" style={styles.chartCard}>
         <Card.Content>
-          <SMobileCoreTest />
+          <MMKVTest app="Dashboard Remote" />
         </Card.Content>
       </Card>
       <View style={styles.header}>

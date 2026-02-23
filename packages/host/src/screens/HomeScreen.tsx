@@ -24,6 +24,7 @@ import upcomingBookings from '../data/upcomingBookings.json';
 import newProducts from '../data/newProducts.json';
 import recentNews from '../data/recentNews.json';
 import recentArticles from '../data/recentArticles.json';
+import {MMKVTest} from '../components/MMKVTest';
 
 type Props = CompositeScreenProps<
   NativeStackScreenProps<HomeStackParamList>,
@@ -161,6 +162,7 @@ const HomeScreen = ({navigation}: Props) => {
         ItemSeparatorComponent={renderDivider}
         contentContainerStyle={styles.contentContainer}
       />
+      <MMKVTest app="Host" />
     </ScrollView>
   );
 };
