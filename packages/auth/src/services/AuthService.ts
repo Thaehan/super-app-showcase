@@ -1,16 +1,16 @@
-import {getItem, setItem, removeItem} from 'smobile-core-rn';
+import { MMKV } from 'react-native-mmkv';
 
-// Sử dụng SMobileCoreRN cho cả Dev và Prod để đảm bảo persistence (giữ session khi restart).
-// Fallback in-memory chỉ dùng khi SMobileCoreRN throw loĩ thực sự.
+const storage = new MMKV({ id: 'super-app-shared' });
+
+// Sử dụng MMKV cho cả Dev và Prod để đảm bảo persistence (giữ session khi restart).
+// Fallback in-memory chỉ dùng khi MMKV throw loĩ thực sự.
 const memoryStore: Record<string, string> = {};
 
 const getKey = (key: string) => {
   try {
-    const val = getItem(key);
+    const val = storage.getString(key);
     console.log('[AuthService] getKey val:', val);
-    // Nếu implementation trả về undefined/null thì fallback? 
-    // Giả sử getItem trả về string | null.
-    return val; 
+    return val ?? null; 
   } catch (e) {
     console.warn('AuthService getKey failed', e);
     return memoryStore[key] ?? null;
@@ -19,7 +19,7 @@ const getKey = (key: string) => {
 
 const setKey = (key: string, value: string) => {
   try {
-    setItem(key, value);
+    storage.set(key, value);
   } catch (e) {
     console.warn('AuthService setKey failed', e);
     memoryStore[key] = value;
@@ -28,7 +28,7 @@ const setKey = (key: string, value: string) => {
 
 const removeKey = (key: string) => {
   try {
-    removeItem(key);
+    storage.delete(key);
   } catch (e) {
     console.warn('AuthService removeKey failed', e);
     delete memoryStore[key];

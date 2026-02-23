@@ -1,39 +1,37 @@
-import {
-  clear as finxClear,
-  getItem as finxGetItem,
-  removeItem as finxRemoveItem,
-  setItem as finxSetItem,
-} from 'smobile-core-rn';
+import { MMKV } from 'react-native-mmkv';
+
+// We share this specific instance ID across all federated modules
+export const sharedStorage = new MMKV({ id: 'super-app-shared' });
 
 /**
- * Promise-wrapped Keychain storage so it can be plugged into consumers
+ * Promise-wrapped MMKV storage so it can be plugged into consumers
  * expecting an AsyncStorage-like interface (e.g., ScriptManager cache).
  */
-export const SMobileStorage = {
+export const MMKVStorage = {
   async getItem(key: string) {
     try {
-      return finxGetItem(key) ?? null;
+      return sharedStorage.getString(key) ?? null;
     } catch (e) {
       return null;
     }
   },
   async setItem(key: string, value: string) {
     try {
-      finxSetItem(key, value);
+      sharedStorage.set(key, value);
     } catch (e) {
       // ignore
     }
   },
   async removeItem(key: string) {
     try {
-      finxRemoveItem(key);
+      sharedStorage.delete(key);
     } catch (e) {
       // ignore
     }
   },
   async clear() {
     try {
-      finxClear();
+      sharedStorage.clearAll();
     } catch (e) {
       // ignore
     }

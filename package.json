@@ -14,11 +14,13 @@
     "start": "mprocs -c mprocs/host.yaml",
     "pods": "pnpm -r pods",
     "pods:update": "pnpm -r pods:update",
+    "pod-host": "cd packages/host/ios && pod install && cd ../../..",
     "lint": "pnpm -r lint",
     "test": "pnpm -r test",
     "typecheck": "pnpm -r typecheck",
     "align-deps": "pnpm -r align-deps",
-    "check-deps": "pnpm -r check-deps"
+    "check-deps": "pnpm -r check-deps",
+    "kill-ports": "lsof -ti:9000-9004 | xargs kill -9 || true"
   },
   "dependencies": {
     "mprocs": "^0.7.1"

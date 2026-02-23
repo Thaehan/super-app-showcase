@@ -4,9 +4,7 @@ import App from './src/App';
 import {name as appName} from './app.json';
 
 // Chỉ set storage trong production và load động.
-if (!__DEV__) {
   const {SMobileStorage} = require('./src/storage/SMobileStorage');
   ScriptManager.shared.setStorage(SMobileStorage);
-}
 
 AppRegistry.registerComponent(appName, () => App);
