@@ -20,7 +20,7 @@ import bookings from '../data/bookings.json';
 import products from '../data/products.json';
 import news from '../data/news.json';
 import articles from '../data/articles.json';
-import FinXCoreTest from '../components/FinXCoreTest';
+import SMobileCoreTest from '../components/SMobileCoreTest';
 
 const showNotImplementedAlert = () => Alert.alert('Not implemented yet');
 
@@ -81,7 +81,7 @@ const HomeScreen = () => {
       contentInsetAdjustmentBehavior="automatic">
       <Card mode="contained" style={styles.chartCard}>
         <Card.Content>
-          <FinXCoreTest />
+          <SMobileCoreTest />
         </Card.Content>
       </Card>
       <View style={styles.header}>

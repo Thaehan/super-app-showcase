@@ -1,7 +1,7 @@
-import {getItem, setItem, removeItem} from 'finx-core-rn';
+import {getItem, setItem, removeItem} from 'smobile-core-rn';
 
-// Sử dụng FinXCoreRN cho cả Dev và Prod để đảm bảo persistence (giữ session khi restart).
-// Fallback in-memory chỉ dùng khi FinXCoreRN throw loĩ thực sự.
+// Sử dụng SMobileCoreRN cho cả Dev và Prod để đảm bảo persistence (giữ session khi restart).
+// Fallback in-memory chỉ dùng khi SMobileCoreRN throw loĩ thực sự.
 const memoryStore: Record<string, string> = {};
 
 const getKey = (key: string) => {

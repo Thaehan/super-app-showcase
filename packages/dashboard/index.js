@@ -5,8 +5,8 @@ import {name as appName} from './app.json';
 
 // Chỉ set storage trong production và load động.
 if (!__DEV__) {
-  const {FinXStorage} = require('./src/storage/FinXStorage');
-  ScriptManager.shared.setStorage(FinXStorage);
+  const {SMobileStorage} = require('./src/storage/SMobileStorage');
+  ScriptManager.shared.setStorage(SMobileStorage);
 }
 
 AppRegistry.registerComponent(appName, () => App);

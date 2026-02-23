@@ -71,8 +71,8 @@
     "version": "^0.5.17",
     "shared": false
   },
-  "finx-core-rn": {
-    "name": "finx-core-rn",
+  "smobile-core-rn": {
+    "name": "smobile-core-rn",
     "version": "0.0.1"
   }
 }

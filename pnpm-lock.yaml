@@ -31,9 +31,9 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.61.0
         version: 5.90.12(react@19.1.1)
-      finx-core-rn:
+      smobile-core-rn:
         specifier: 0.0.1
-        version: link:../../sdks/ReactNative/FinXCoreRN
+        version: link:../../sdks/ReactNative/SMobileCoreRN
       react:
         specifier: 19.1.1
         version: 19.1.1
@@ -279,9 +279,9 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.61.0
         version: 5.90.12(react@19.1.1)
-      finx-core-rn:
+      smobile-core-rn:
         specifier: 0.0.1
-        version: link:../../sdks/ReactNative/FinXCoreRN
+        version: link:../../sdks/ReactNative/SMobileCoreRN
       react:
         specifier: 19.1.1
         version: 19.1.1
@@ -406,9 +406,9 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.61.0
         version: 5.90.12(react@19.1.1)
-      finx-core-rn:
+      smobile-core-rn:
         specifier: 0.0.1
-        version: link:../../sdks/ReactNative/FinXCoreRN
+        version: link:../../sdks/ReactNative/SMobileCoreRN
       react:
         specifier: 19.1.1
         version: 19.1.1
@@ -547,9 +547,9 @@ importers:
       '@react-navigation/native-stack':
         specifier: 7.2.0
         version: 7.2.0(@react-navigation/native@7.0.14(react-native@0.82.1(@babel/core@7.26.0)(@react-native-community/cli@15.0.1(typescript@5.6.3))(@react-native/metro-config@0.82.1(@babel/core@7.26.0))(@types/react@19.1.1)(react@19.1.1))(react@19.1.1))(react-native-safe-area-context@5.6.2(react-native@0.82.1(@babel/core@7.26.0)(@react-native-community/cli@15.0.1(typescript@5.6.3))(@react-native/metro-config@0.82.1(@babel/core@7.26.0))(@types/react@19.1.1)(react@19.1.1))(react@19.1.1))(react-native-screens@4.18.0(react-native@0.82.1(@babel/core@7.26.0)(@react-native-community/cli@15.0.1(typescript@5.6.3))(@react-native/metro-config@0.82.1(@babel/core@7.26.0))(@types/react@19.1.1)(react@19.1.1))(react@19.1.1))(react-native@0.82.1(@babel/core@7.26.0)(@react-native-community/cli@15.0.1(typescript@5.6.3))(@react-native/metro-config@0.82.1(@babel/core@7.26.0))(@types/react@19.1.1)(react@19.1.1))(react@19.1.1)
-      finx-core-rn:
+      smobile-core-rn:
         specifier: 0.0.1
-        version: link:../../sdks/ReactNative/FinXCoreRN
+        version: link:../../sdks/ReactNative/SMobileCoreRN
       react:
         specifier: 19.1.1
         version: 19.1.1
@@ -654,7 +654,7 @@ importers:
         specifier: ^5.6.3
         version: 5.6.3
 
-  sdks/ReactNative/FinXCoreRN:
+  sdks/ReactNative/SMobileCoreRN:
     dependencies:
       react-native-nitro-modules:
         specifier: ^0.31.6
