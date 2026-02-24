@@ -1,17 +1,21 @@
 import React, {useCallback, useMemo, useState} from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {CalendarList, CalendarUtils, DateData} from 'react-native-calendars';
-import {FAB, List, MD3Colors} from 'react-native-paper';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import bookings from '../data/bookings.json';
 
 const INITIAL_DATE = CalendarUtils.getCalendarDateString(new Date());
 
 const renderAppointment = ({item}: any) => (
-  <List.Item
-    title={`${item.title} • ${item.provider}`}
-    description={`${item.date} ${item.time}`}
-    left={props => <List.Icon {...props} icon="calendar" />}
-  />
+  <View style={styles.listItem}>
+    <View style={styles.listIconContainer}>
+      <Icon name="calendar" size={24} color="#49454F" />
+    </View>
+    <View style={{flex: 1}}>
+      <Text style={styles.listTitle}>{`${item.title} • ${item.provider}`}</Text>
+      <Text style={styles.listDescription}>{`${item.date} ${item.time}`}</Text>
+    </View>
+  </View>
 );
 
 const CalendarScreen = () => {
@@ -25,7 +29,7 @@ const CalendarScreen = () => {
       },
       [INITIAL_DATE]: {
         selected: true,
-        selectedColor: MD3Colors.primary50,
+        selectedColor: '#6750A4',
       },
     };
   }, [selected]);
@@ -49,16 +53,13 @@ const CalendarScreen = () => {
           dayTextColor: 'black',
           monthTextColor: 'black',
           indicatorColor: 'black',
-          selectedDayBackgroundColor: MD3Colors.secondary50,
+          selectedDayBackgroundColor: '#625B71',
         }}
       />
       <FlatList data={bookings.data} renderItem={renderAppointment} />
-      <FAB
-        icon="plus"
-        color={MD3Colors.primary50}
-        style={styles.fab}
-        onPress={() => {}}
-      />
+      <TouchableOpacity style={styles.fab} onPress={() => {}} activeOpacity={0.7}>
+        <Icon name="plus" size={24} color="#6750A4" />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -68,11 +69,43 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
+  listItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+  },
+  listIconContainer: {
+    width: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 16,
+  },
+  listTitle: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#1C1B1F',
+  },
+  listDescription: {
+    fontSize: 14,
+    color: '#49454F',
+    marginTop: 2,
+  },
   fab: {
     position: 'absolute',
-    right: 0,
-    margin: 16,
-    bottom: 0,
+    right: 16,
+    bottom: 16,
+    width: 56,
+    height: 56,
+    borderRadius: 16,
+    backgroundColor: '#E8DEF8',
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 6,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 3},
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
   },
 });
 

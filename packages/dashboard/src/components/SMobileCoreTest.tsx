@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Button, Text, TextInput} from 'react-native-paper';
+import {StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {
   authenticateBiometrics,
   biometricsAvailability,
@@ -27,9 +26,7 @@ const SMobileCoreTest = () => {
 
   const runSet = () => {
     const targetKey = ensureKey();
-    if (!targetKey) {
-      return;
-    }
+    if (!targetKey) return;
     try {
       const payload = value || cryptoRandomBytesBase64(16);
       setItem(targetKey, payload);
@@ -41,9 +38,7 @@ const SMobileCoreTest = () => {
 
   const runGet = () => {
     const targetKey = ensureKey();
-    if (!targetKey) {
-      return;
-    }
+    if (!targetKey) return;
     try {
       const stored = getItem(targetKey);
       setStatus(
@@ -98,57 +93,50 @@ const SMobileCoreTest = () => {
 
   return (
     <View style={styles.container}>
-      <Text variant="titleMedium" style={styles.title}>
-        SMobileCoreRN playground
-      </Text>
+      <Text style={styles.title}>SMobileCoreRN playground</Text>
       <TextInput
-        mode="outlined"
-        label="Key"
+        style={styles.input}
         value={key}
         onChangeText={setKey}
-        style={styles.input}
+        placeholder="Key"
         autoCapitalize="none"
       />
       <TextInput
-        mode="outlined"
-        label="Value to store/hash"
+        style={styles.input}
         value={value}
         onChangeText={setValue}
-        style={styles.input}
+        placeholder="Value to store/hash"
       />
       <View style={styles.actionsRow}>
-        <Button mode="contained" onPress={runSet} style={styles.button}>
-          Save
-        </Button>
-        <Button mode="outlined" onPress={runGet} style={styles.button}>
-          Read
-        </Button>
-        <Button mode="text" onPress={runClear} style={styles.button}>
-          Clear
-        </Button>
+        <TouchableOpacity style={[styles.button, styles.containedBtn]} onPress={runSet}>
+          <Text style={styles.containedLabel}>Save</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[styles.button, styles.outlinedBtn]} onPress={runGet}>
+          <Text style={styles.outlinedLabel}>Read</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={runClear}>
+          <Text style={styles.outlinedLabel}>Clear</Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.actionsRow}>
-        <Button mode="contained-tonal" onPress={runBiometrics} style={styles.button}>
-          Check biometrics
-        </Button>
-        <Button mode="outlined" onPress={runAuth} style={styles.button}>
-          Prompt auth
-        </Button>
+        <TouchableOpacity style={[styles.button, styles.tonalBtn]} onPress={runBiometrics}>
+          <Text style={styles.tonalLabel}>Check biometrics</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[styles.button, styles.outlinedBtn]} onPress={runAuth}>
+          <Text style={styles.outlinedLabel}>Prompt auth</Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.actionsRow}>
-        <Button mode="contained-tonal" onPress={runHash} style={styles.button}>
-          SHA256
-        </Button>
-        <Button
-          mode="outlined"
-          onPress={() => setValue(cryptoRandomBytesBase64(24))}
-          style={styles.button}>
-          Random bytes
-        </Button>
+        <TouchableOpacity style={[styles.button, styles.tonalBtn]} onPress={runHash}>
+          <Text style={styles.tonalLabel}>SHA256</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.button, styles.outlinedBtn]}
+          onPress={() => setValue(cryptoRandomBytesBase64(24))}>
+          <Text style={styles.outlinedLabel}>Random bytes</Text>
+        </TouchableOpacity>
       </View>
-      <Text variant="bodyMedium" style={styles.status}>
-        {status}
-      </Text>
+      <Text style={styles.status}>{status}</Text>
     </View>
   );
 };
@@ -158,10 +146,19 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   title: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#1C1B1F',
     marginBottom: 4,
   },
   input: {
     backgroundColor: 'white',
+    borderWidth: 1,
+    borderColor: '#79747E',
+    borderRadius: 4,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    fontSize: 16,
   },
   actionsRow: {
     flexDirection: 'row',
@@ -170,9 +167,40 @@ const styles = StyleSheet.create({
   },
   button: {
     flexGrow: 1,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 20,
+    alignItems: 'center',
+  },
+  containedBtn: {
+    backgroundColor: '#6750A4',
+  },
+  containedLabel: {
+    color: '#fff',
+    fontWeight: '500',
+    fontSize: 14,
+  },
+  outlinedBtn: {
+    borderWidth: 1,
+    borderColor: '#79747E',
+  },
+  outlinedLabel: {
+    color: '#6750A4',
+    fontWeight: '500',
+    fontSize: 14,
+  },
+  tonalBtn: {
+    backgroundColor: '#E8DEF8',
+  },
+  tonalLabel: {
+    color: '#1D192B',
+    fontWeight: '500',
+    fontSize: 14,
   },
   status: {
     marginTop: 8,
+    fontSize: 14,
+    color: '#49454F',
   },
 });
 

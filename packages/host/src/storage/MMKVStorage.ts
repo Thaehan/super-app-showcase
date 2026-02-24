@@ -1,6 +1,7 @@
 import { MMKV } from 'react-native-mmkv';
 
-// We share this specific instance ID across all federated modules
+// MMKV with the same ID automatically shares data via memory-mapped files.
+// Multiple `new MMKV({ id })` calls point to the same mmap'd file on disk.
 export const sharedStorage = new MMKV({ id: 'super-app-shared' });
 
 /**

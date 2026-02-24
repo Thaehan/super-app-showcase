@@ -1,6 +1,5 @@
 import React from 'react';
-import {createNativeBottomTabNavigator} from '@bottom-tabs/react-navigation';
-import {MD3Colors} from 'react-native-paper';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AccountNavigator from './AccountNavigator';
 import HomeNavigator from './HomeNavigator';
@@ -12,24 +11,22 @@ export type TabsParamList = {
   AccountNavigator: undefined;
 };
 
-const homeIcon = Icon.getImageSourceSync('home', 24);
-const magnifyIcon = Icon.getImageSourceSync('magnify', 24);
-const accountIcon = Icon.getImageSourceSync('account', 24);
-
-const Tabs = createNativeBottomTabNavigator<TabsParamList>();
+const Tabs = createBottomTabNavigator<TabsParamList>();
 
 const TabsNavigator = () => {
   return (
     <Tabs.Navigator
-      translucent={false}
-      tabBarActiveTintColor={MD3Colors.primary50}
-      barTintColor={MD3Colors.primary95}>
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: '#6750A4',
+        tabBarStyle: {backgroundColor: '#F6EDFF'},
+      }}>
       <Tabs.Screen
         name="HomeNavigator"
         component={HomeNavigator}
         options={{
           title: 'Home',
-          tabBarIcon: () => homeIcon,
+          tabBarIcon: ({color, size}) => <Icon name="home" color={color} size={size} />,
         }}
       />
       <Tabs.Screen
@@ -37,7 +34,7 @@ const TabsNavigator = () => {
         component={SearchNavigator}
         options={{
           title: 'Search',
-          tabBarIcon: () => magnifyIcon,
+          tabBarIcon: ({color, size}) => <Icon name="magnify" color={color} size={size} />,
         }}
       />
       <Tabs.Screen
@@ -45,7 +42,7 @@ const TabsNavigator = () => {
         component={AccountNavigator}
         options={{
           title: 'Account',
-          tabBarIcon: () => accountIcon,
+          tabBarIcon: ({color, size}) => <Icon name="account" color={color} size={size} />,
         }}
       />
     </Tabs.Navigator>

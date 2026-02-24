@@ -1,49 +1,21 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {ActivityIndicator, StyleSheet, Text} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {MD3Colors, ProgressBar, Text} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const SplashScreen = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <Icon
-        style={styles.icon}
-        size={56}
-        color={MD3Colors.primary20}
-        name="cloud"
-      />
-      <Text style={styles.text}>
-        Booking application is loading. Please wait...
-      </Text>
-      <ProgressBar
-        style={styles.progress}
-        indeterminate
-        color={MD3Colors.primary50}
-      />
-    </SafeAreaView>
-  );
-};
+const SplashScreen = () => (
+  <SafeAreaView style={styles.container}>
+    <Icon style={styles.icon} size={56} color="#36343B" name="cloud" />
+    <Text style={styles.text}>Booking application is loading. Please wait...</Text>
+    <ActivityIndicator style={styles.progress} size="large" color="#6750A4" />
+  </SafeAreaView>
+);
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  icon: {
-    textAlign: 'center',
-  },
-  text: {
-    paddingVertical: 16,
-    paddingHorizontal: 32,
-    fontSize: 24,
-    color: MD3Colors.primary20,
-    textAlign: 'center',
-  },
-  progress: {
-    marginVertical: 16,
-    marginHorizontal: 32,
-  },
+  container: { flex: 1, justifyContent: 'center' },
+  icon: { textAlign: 'center' },
+  text: { paddingVertical: 16, paddingHorizontal: 32, fontSize: 24, color: '#36343B', textAlign: 'center' },
+  progress: { marginVertical: 16, marginHorizontal: 32 },
 });
 
 export default SplashScreen;

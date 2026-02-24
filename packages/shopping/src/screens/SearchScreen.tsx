@@ -1,6 +1,6 @@
 import React, {useCallback, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {MD3Colors, Searchbar} from 'react-native-paper';
+import {StyleSheet, TextInput, View} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const SearchScreen = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -12,13 +12,16 @@ const SearchScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Searchbar
-        placeholder="Search..."
-        onChangeText={onChangeSearch}
-        value={searchQuery}
-        iconColor={MD3Colors.primary50}
-        style={styles.searchbar}
-      />
+      <View style={styles.searchbar}>
+        <Icon name="magnify" size={24} color="#6750A4" style={styles.searchIcon} />
+        <TextInput
+          placeholder="Search..."
+          onChangeText={onChangeSearch}
+          value={searchQuery}
+          style={styles.searchInput}
+          placeholderTextColor="#79747E"
+        />
+      </View>
     </View>
   );
 };
@@ -30,6 +33,25 @@ const styles = StyleSheet.create({
   },
   searchbar: {
     margin: 16,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F7F2FA',
+    borderRadius: 28,
+    paddingHorizontal: 16,
+    height: 56,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 1},
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+  },
+  searchIcon: {
+    marginRight: 12,
+  },
+  searchInput: {
+    flex: 1,
+    fontSize: 16,
+    color: '#1C1B1F',
   },
 });
 

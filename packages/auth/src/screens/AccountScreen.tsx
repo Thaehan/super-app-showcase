@@ -1,31 +1,34 @@
 import React from 'react';
-import {Pressable, StyleSheet, View} from 'react-native';
-import {MD3Colors, Text} from 'react-native-paper';
+import {Pressable, StyleSheet, Text} from 'react-native';
 import {useAuth} from '../contexts/AuthContext';
+import Container from '../components/Container';
 
 const AccountScreen = () => {
   const {signOut} = useAuth();
 
   return (
-    <View style={styles.container}>
+    <Container style={styles.container}>
       <Pressable style={styles.button} onPress={signOut}>
-        <Text>Logout</Text>
+        <Text style={styles.buttonText}>Logout</Text>
       </Pressable>
-    </View>
+    </Container>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
   button: {
-    backgroundColor: MD3Colors.primary90,
+    backgroundColor: '#D0BCFF',
     padding: 16,
     borderRadius: 16,
+  },
+  buttonText: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#1C1B1F',
   },
 });
 

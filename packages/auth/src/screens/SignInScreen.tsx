@@ -1,45 +1,51 @@
 import React from 'react';
-import {Pressable, StyleSheet, View} from 'react-native';
-import {MD3Colors, Text} from 'react-native-paper';
+import {Pressable, StyleSheet, Text} from 'react-native';
 import {useAuth} from '../contexts/AuthContext';
+import Container from '../components/Container';
 
 const SignInScreen = () => {
   const {signIn} = useAuth();
 
   return (
-    <View style={styles.container}>
-      <Text variant="headlineMedium" style={styles.welcomeHeadline}>
-        Welcome!
-      </Text>
-      <Text style={styles.welcomeText} variant="bodyLarge">
+    <Container style={styles.container}>
+      <Text style={styles.welcomeHeadline}>Welcome!</Text>
+      <Text style={styles.welcomeText}>
         This is a dummy login screen. Just press the button and have a look
         around this super app 🚀
       </Text>
       <Pressable style={styles.button} onPress={signIn}>
-        <Text>Login</Text>
+        <Text style={styles.buttonText}>Login</Text>
       </Pressable>
-    </View>
+    </Container>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
   welcomeHeadline: {
-    color: MD3Colors.primary20,
+    fontSize: 28,
+    fontWeight: '600',
+    color: '#36343B',
   },
   welcomeText: {
+    fontSize: 16,
     padding: 16,
     paddingBottom: 32,
+    color: '#1C1B1F',
+    textAlign: 'center',
   },
   button: {
-    backgroundColor: MD3Colors.primary90,
+    backgroundColor: '#D0BCFF',
     padding: 16,
     borderRadius: 16,
+  },
+  buttonText: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#1C1B1F',
   },
 });
 

@@ -1,6 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Text} from 'react-native-paper';
+import {StyleSheet, Text, View} from 'react-native';
 
 const ScreenPlaceholder = () => {
   return (
@@ -18,6 +17,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
+    color: '#1C1B1F',
   },
 });
 

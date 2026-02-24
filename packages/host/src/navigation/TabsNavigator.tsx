@@ -1,6 +1,5 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {MD3Colors} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import HomeNavigator from './HomeNavigator';
 import ServicesNavigator from './ServicesNavigator';
@@ -19,8 +18,8 @@ const TabsNavigator = () => {
     <Tabs.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: MD3Colors.primary50,
-        tabBarStyle: {backgroundColor: MD3Colors.primary95},
+        tabBarActiveTintColor: '#6750A4',
+        tabBarStyle: {backgroundColor: '#F6EDFF'},
       }}>
       <Tabs.Screen
         name="HomeNavigator"

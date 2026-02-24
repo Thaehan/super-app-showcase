@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {View, Text, TextInput, Button, StyleSheet} from 'react-native';
 import {MMKV} from 'react-native-mmkv';
 
-// SỬ dụng đúng ID để check
 const storage = new MMKV({id: 'super-app-shared'});
 
 export const MMKVTest = ({app}: {app: string}) => {
@@ -16,7 +15,7 @@ export const MMKVTest = ({app}: {app: string}) => {
     setSavedVal(v || '');
 
     // Setup listener
-    const listener = storage.addOnValueChangedListener((key) => {
+    const listener = storage.addOnValueChangedListener((key: string) => {
       if (key === keyToRead) {
         const newValue = storage.getString(keyToRead) || '';
         setSavedVal(newValue);

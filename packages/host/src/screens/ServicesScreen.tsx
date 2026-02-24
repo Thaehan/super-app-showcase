@@ -2,14 +2,16 @@ import React, {useCallback} from 'react';
 import {
   Alert,
   FlatList,
+  Image,
   ListRenderItemInfo,
   StyleSheet,
+  Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import {CompositeScreenProps} from '@react-navigation/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {MainStackParamList} from '../navigation/MainNavigator';
-import {Card, Paragraph, Title} from 'react-native-paper';
 import services from '../data/services.json';
 import {ServicesStackParamList} from '../navigation/ServicesNavigator';
 
@@ -58,13 +60,13 @@ const ServicesScreen = ({navigation}: ServiceScreenProps) => {
 
       return (
         <View style={[styles.serviceItem, lastItem && styles.lastServiceItem]}>
-          <Card mode="contained" onPress={onPress} style={styles.cardItem}>
-            <Card.Cover source={{uri: `${item.image}?${index}`}} />
-            <Card.Content>
-              <Title numberOfLines={1}>{item.title}</Title>
-              <Paragraph numberOfLines={1}>{item.description}</Paragraph>
-            </Card.Content>
-          </Card>
+          <TouchableOpacity onPress={onPress} style={styles.cardItem} activeOpacity={0.7}>
+            <Image source={{uri: `${item.image}?${index}`}} style={styles.cardCover} />
+            <View style={styles.cardContent}>
+              <Text style={styles.titleText} numberOfLines={1}>{item.title}</Text>
+              <Text style={styles.paragraphText} numberOfLines={1}>{item.description}</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       );
     },
@@ -95,6 +97,26 @@ const styles = StyleSheet.create({
   },
   cardItem: {
     flex: 1,
+    backgroundColor: '#F7F2FA',
+    borderRadius: 12,
+    overflow: 'hidden',
+  },
+  cardCover: {
+    width: '100%',
+    height: 120,
+  },
+  cardContent: {
+    padding: 12,
+  },
+  titleText: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#1C1B1F',
+  },
+  paragraphText: {
+    fontSize: 14,
+    color: '#49454F',
+    marginTop: 4,
   },
 });
 

@@ -1,6 +1,5 @@
 import React from 'react';
-import {createNativeBottomTabNavigator} from '@bottom-tabs/react-navigation';
-import {MD3Colors} from 'react-native-paper';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import HomeNavigator from './HomeNavigator';
 import CalendarNavigator from './CalendarNavigator';
@@ -14,25 +13,22 @@ export type TabsParamList = {
   AccountNavigator: undefined;
 };
 
-const homeIcon = Icon.getImageSourceSync('home', 24);
-const calendarIcon = Icon.getImageSourceSync('calendar', 24);
-const chartBoxIcon = Icon.getImageSourceSync('chart-box', 24);
-const accountIcon = Icon.getImageSourceSync('account', 24);
-
-const Tabs = createNativeBottomTabNavigator<TabsParamList>();
+const Tabs = createBottomTabNavigator<TabsParamList>();
 
 const TabsNavigator = () => {
   return (
     <Tabs.Navigator
-      translucent={false}
-      tabBarActiveTintColor={MD3Colors.primary50}
-      barTintColor={MD3Colors.primary95}>
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: '#6750A4',
+        tabBarStyle: {backgroundColor: '#F6EDFF'},
+      }}>
       <Tabs.Screen
         name="HomeNavigator"
         component={HomeNavigator}
         options={{
           title: 'Home',
-          tabBarIcon: () => homeIcon,
+          tabBarIcon: ({color, size}) => <Icon name="home" color={color} size={size} />,
         }}
       />
       <Tabs.Screen
@@ -40,7 +36,7 @@ const TabsNavigator = () => {
         component={CalendarNavigator}
         options={{
           title: 'Calendar',
-          tabBarIcon: () => calendarIcon,
+          tabBarIcon: ({color, size}) => <Icon name="calendar" color={color} size={size} />,
         }}
       />
       <Tabs.Screen
@@ -48,7 +44,7 @@ const TabsNavigator = () => {
         component={StatisticsNavigator}
         options={{
           title: 'Statistics',
-          tabBarIcon: () => chartBoxIcon,
+          tabBarIcon: ({color, size}) => <Icon name="chart-box" color={color} size={size} />,
         }}
       />
       <Tabs.Screen
@@ -56,7 +52,7 @@ const TabsNavigator = () => {
         component={AccountNavigator}
         options={{
           title: 'Account',
-          tabBarIcon: () => accountIcon,
+          tabBarIcon: ({color, size}) => <Icon name="account" color={color} size={size} />,
         }}
       />
     </Tabs.Navigator>
@@ -64,3 +60,4 @@ const TabsNavigator = () => {
 };
 
 export default TabsNavigator;
+

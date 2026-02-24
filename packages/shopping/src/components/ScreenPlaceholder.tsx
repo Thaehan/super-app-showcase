@@ -1,24 +1,15 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Text} from 'react-native-paper';
+import {StyleSheet, Text, View} from 'react-native';
 
-const ScreenPlaceholder = () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Not implemented yet</Text>
-    </View>
-  );
-};
+const ScreenPlaceholder = () => (
+  <View style={styles.container}>
+    <Text style={styles.title}>Not implemented yet</Text>
+  </View>
+);
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 24,
-  },
+  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  title: { fontSize: 24, color: '#1C1B1F' },
 });
 
 export default ScreenPlaceholder;

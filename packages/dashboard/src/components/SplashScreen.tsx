@@ -1,26 +1,16 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {ActivityIndicator, StyleSheet, Text} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {MD3Colors, ProgressBar, Text} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const SplashScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Icon
-        style={styles.icon}
-        size={56}
-        color={MD3Colors.primary20}
-        name="cloud"
-      />
+      <Icon style={styles.icon} size={56} color="#36343B" name="cloud" />
       <Text style={styles.text}>
         Dashboard application is loading. Please wait...
       </Text>
-      <ProgressBar
-        style={styles.progress}
-        indeterminate
-        color={MD3Colors.primary50}
-      />
+      <ActivityIndicator style={styles.progress} size="large" color="#6750A4" />
     </SafeAreaView>
   );
 };
@@ -37,7 +27,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     paddingHorizontal: 32,
     fontSize: 24,
-    color: MD3Colors.primary20,
+    color: '#36343B',
     textAlign: 'center',
   },
   progress: {

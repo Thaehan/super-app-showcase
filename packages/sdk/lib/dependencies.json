@@ -15,6 +15,10 @@
     "name": "@react-navigation/native",
     "version": "7.0.14"
   },
+  "@react-navigation/bottom-tabs": {
+    "name": "@react-navigation/bottom-tabs",
+    "version": "7.0.14"
+  },
   "@react-navigation/native-stack": {
     "name": "@react-navigation/native-stack",
     "version": "7.2.0"
@@ -22,10 +26,6 @@
   "react-native-bottom-tabs": {
     "name": "react-native-bottom-tabs",
     "version": "0.9.0"
-  },
-  "react-native-paper": {
-    "name": "react-native-paper",
-    "version": "5.12.5"
   },
   "react-native-reanimated": {
     "name": "react-native-reanimated",
